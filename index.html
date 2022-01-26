@@ -7,20 +7,53 @@
     <title>management_system</title>
 </head>
 <body>
-    <header style="width: 100%; height: 110px; background-color: rgb(214, 191, 255);">
+    <header style="width: 100%; height: 110px; background-color: #1572A1;">
         <nav>
-            <a style="float: left; margin-left: 180px; margin-top: 45px; font-size: large;" href="./index.html">Home</a>
-            <a style="float: left; margin-left: 120px; margin-top: 45px; font-size: large;" href="./accounting.html">accounting</a>
+            <a style="float: left; margin-left: 180px; margin-top: 45px; font-size: large; color: rgb(255, 255, 255);" href="./index.html">Home</a>
+            <a style="float: left; margin-left: 120px; margin-top: 45px; font-size: large; color: rgb(255, 255, 255);" href="./accounting.html">accounting</a>
         </nav>
     </header>
-    <main style="width: 100%; height: 410px;"><script src="./app.js"></script></main>
-    <footer style="width: 100%; height: 110px; background-color: rgb(178, 137, 255);">
+    <main style="width: 100%; min-height: 100%; background-color: lightsteelblue;">
+        <section>
+    <form style="margin-top: 50px; margin-bottom: 50px;" id="empForm">
+        <fieldset>
+            <legend>Employee Card</legend>
+        <label for="fname">First name: </label>
+        <input type="text" id="fname" name="fname"><br /><br />
+        <label for="Dept">Department: </label>
+        <select id="Department" name="Department">
+            <option value="administration">Administration</option>
+            <option value="marketing">Marketing</option>
+            <option value="development">Development</option>
+            <option value="finance" selected>Finance</option>
+          </select><br /><br />
+          <label for="level">Level: </label>
+          <select id="Level" name="Level">
+            <option value="Junior">Junior</option>
+            <option value="Mid-Senior">Mid-Senior</option>
+            <option value="Senior">Senior</option>
+          </select><br /><br />
+          <label for="imgURL">Image url: </label>
+          <input type="text" id="image" name="image"><br /><br />
+          <input type="submit" value="Add Card" id="submitCard">
+        </fieldset>
+    </form>
+      </section>
+      <section>
+          <div id="card" style="background-color: #EFDAD7; display: inline-block; margin-bottom: 80px;">
+
+          </div>
+          
+      </section>
+      <script src="./app.js"></script>
+    </main>
+    <footer style="width: 100%; height: 110px; background-color: #1572A1;">
         <nav>
-            <a style="float: left; margin-left: 50px; margin-top: 45px;" href="https://www.gmail.com">HRmanagement@gmail.com</a>
+            <a style="float: left; margin-left: 50px; margin-top: 45px; color: #001f2e;" href="https://www.gmail.com">HRmanagement@gmail.com</a>
             <div style="float: left; margin-left: 300px; margin-top: 45px; font-size: small;">Copyright &copy; All rights reserved</div>
-            <a style="float: left; margin-left: 280px; margin-top: 45px;" href="https://www.facebook.com">facebook</a>
-            <a style="float: left; margin-left: 60px; margin-top: 45px;" href="https://www.instagram.com">instagram</a>
-            <a style="float: left; margin-left: 60px; margin-top: 45px;" href="https://www.twitter.com">tweeter</a>
+            <a style="float: left; margin-left: 280px; margin-top: 45px; color: #002335;" href="https://www.facebook.com">facebook</a>
+            <a style="float: left; margin-left: 60px; margin-top: 45px; color: #002131;" href="https://www.instagram.com">instagram</a>
+            <a style="float: left; margin-left: 60px; margin-top: 45px; color: #002131;" href="https://www.twitter.com">tweeter</a>
         </nav>
     </footer>
     
