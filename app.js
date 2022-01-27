@@ -33,9 +33,17 @@ Employee.prototype.calculateSalary = function(){
         this.salary=Math.round(sal-(sal * (7.5/100)));
     }
 }
+
+let employees=[];
+
 Employee.prototype.render = function(){
     document.write(`<p>The salary for the employee ${this.fullName} is ${this.salary}</p>`);
-    
+
+    let empObj={empName:this.fullName,empDepartment:this.department,empLevel:this.level,empSalary:this.salary,empID:this.employeeID};
+    employees.push(empObj);
+
+    let jsonArray=toJSON();
+    saveToLocals(jsonArray);
 }
 
 const ghazi=new Employee(1000,"Ghazi Samer","Administration","Senior",'./assests/Ghazi.jpg');
@@ -104,6 +112,8 @@ function addCard(event){
         urlE=hadi.imageURL;
     }
 
+    card.innerHTML='';
+
     let img1=document.createElement('img');
     img1.setAttribute('src',urlE);
     img1.style.width='300px';
@@ -123,5 +133,13 @@ function addCard(event){
     card.appendChild(p2);
 }
 
+function toJSON(){
+    let jsonArray=JSON.stringify(employees);
+    return jsonArray;
+}
+
+function saveToLocals(jsonArray){
+    localStorage.setItem('allEmployees',jsonArray);
+}
 
 empForm.addEventListener('submit', addCard);
