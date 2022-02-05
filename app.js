@@ -44,6 +44,24 @@ Employee.prototype.render = function(){
 
     let jsonArray=toJSON();
     saveToLocals(jsonArray);
+
+    let img2=document.createElement('img');
+    img2.setAttribute('src',this.imageURL);
+    img2.style.width='300px';
+    img2.style.height='330px';
+    card.appendChild(img2);
+
+    let pp=document.createElement('p');
+    pp.textContent = `Name: ${this.fullName} - ID: ${this.employeeID}`;
+    card.appendChild(pp);
+
+    let pp1=document.createElement('p');
+    pp1.textContent = `Department: ${this.department} - Level: ${this.level}`;
+    card.appendChild(pp1);
+
+    let pp2=document.createElement('p');
+    pp2.textContent = IDgenerator();
+    card.appendChild(pp2);
 }
 
 const ghazi=new Employee(1000,"Ghazi Samer","Administration","Senior",'./assests/Ghazi.jpg');
@@ -73,46 +91,8 @@ function addCard(event){
     let fname = event.target.fname.value;
     let Department = event.target.Department.value;
     let Level = event.target.Level.value;
+    let urlE=event.target.image.value;
 
-    let idE;
-    let urlE;
-    if(fname==ghazi.fullName)
-    {
-        idE=ghazi.employeeID;
-        urlE=ghazi.imageURL;
-    }
-    if(fname==lana.fullName)
-    {
-        idE=lana.employeeID;
-        urlE=lana.imageURL;
-    }
-    if(fname==tamara.fullName)
-    {
-        idE=tamara.employeeID;
-        urlE=tamara.imageURL;
-    }
-    if(fname==safi.fullName)
-    {
-        idE=safi.employeeID;
-        urlE=safi.imageURL;
-    }
-    if(fname==omar.fullName)
-    {
-        idE=omar.employeeID;
-        urlE=omar.imageURL;
-    }
-    if(fname==rana.fullName)
-    {
-        idE=rana.employeeID;
-        urlE=rana.imageURL;
-    }
-    if(fname==hadi.fullName)
-    {
-        idE=hadi.employeeID;
-        urlE=hadi.imageURL;
-    }
-
-    card.innerHTML='';
 
     let img1=document.createElement('img');
     img1.setAttribute('src',urlE);
@@ -121,7 +101,7 @@ function addCard(event){
     card.appendChild(img1);
 
     let p=document.createElement('p');
-    p.textContent = `Name: ${fname} - ID: ${idE}`;
+    p.textContent = `Name: ${fname} - ID: ${IDgenerator()}`;
     card.appendChild(p);
 
     let p1=document.createElement('p');
